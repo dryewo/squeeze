@@ -1,6 +1,7 @@
 # squeeze
 
 [![Build Status](https://travis-ci.org/dryewo/squeeze.svg?branch=master)](https://travis-ci.org/dryewo/squeeze)
+[![codecov](https://codecov.io/gh/dryewo/squeeze/branch/master/graph/badge.svg)](https://codecov.io/gh/dryewo/squeeze)
 [![Clojars Project](https://img.shields.io/clojars/v/squeeze.svg)](https://clojars.org/squeeze)
 
 A Clojure library for config coercion.
