@@ -57,7 +57,7 @@
 (defn coerce-config
   "Validates and transforms, if possible, `data` against `schema`, dropping unknown keys."
   [schema data]
-  (if (and (sequential? schema) (empty? schema))
+  (if (and (map? schema) (empty? schema))
     {}
     (let [coercer-fn (sc/coercer! (s/maybe schema) config-coercion-matcher)]
       (coercer-fn data))))

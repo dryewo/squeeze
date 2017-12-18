@@ -23,7 +23,7 @@
     (coerce-ok {s/Str s/Keyword} "str: kw" {"str" :kw})
     (coerce-ok {s/Keyword [{s/Keyword s/Keyword}]} "kw: [kw: kw]" {:kw [{:kw :kw}]}))
   (testing "Corner cases"
-    (coerce-ok {} {} {})))
+    (coerce-ok {} {:foo 42} {})))
 
 (deftest utils
   (is (= {:A 1} (map-remap {:A :a} {:a 1 :b 2})))
