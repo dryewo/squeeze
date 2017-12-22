@@ -4,7 +4,7 @@
             [schema.utils :as su]
             [clojure.string :as str]
             [clj-yaml.core :as yaml])
-  (:import (clojure.lang PersistentArrayMap PersistentHashMap PersistentTreeMap)))
+  (:import (clojure.lang PersistentArrayMap PersistentHashMap PersistentTreeMap Named)))
 
 ;;; Special matcher to remove unknown keys from the map
 ;;; From: http://stackoverflow.com/a/31597277
@@ -43,6 +43,14 @@
   (when (sequential? s)
     (sc/safe parse-yaml-str-keys)))
 
+(defn ->string [x]
+  (if (instance? Named x)
+    (name x)
+    (str x)))
+
+(def stringable-matcher
+  {s/Str ->string})
+
 (defn config-coercion-matcher
   "A matcher that coerces keywords, keyword eq/enums, s/Num and s/Int,
      and long and doubles (JVM only) from strings, also removes unknown keys
@@ -50,6 +58,7 @@
   [schema]
   (or (map-filter-matcher schema)
       (array-matcher schema)
+      (stringable-matcher schema)
       (sc/+string-coercions+ schema)
       (sc/keyword-enum-matcher schema)
       (sc/set-matcher schema)))

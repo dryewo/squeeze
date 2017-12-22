@@ -11,6 +11,9 @@
 
 (deftest coercer
   (testing "Basic coercions"
+    (coerce-ok s/Str :foo "foo")
+    (coerce-ok s/Str 'foo "foo")
+    (coerce-ok s/Str 1.2 "1.2")
     (coerce-ok s/Int "1" 1)
     (coerce-ok s/Num "1.1" 1.1)
     (coerce-ok s/Bool "true" true)
