@@ -1,4 +1,4 @@
-(defproject squeeze "0.2.0"
+(defproject squeeze "0.3.0"
   :description "Library for config coercion"
   :url "https://github.com/dryewo/squeeze"
   :license {:name "Eclipse Public License"
