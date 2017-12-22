@@ -20,7 +20,7 @@
              m))
 
 (defn parse-yaml-str-keys [s]
-  (yaml/parse-string s :keywords false))
+  (yaml/parse-string s))
 
 (defn map-filter-matcher [s]
   (when (or (instance? PersistentArrayMap s)

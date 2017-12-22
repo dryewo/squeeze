@@ -23,6 +23,7 @@
     (coerce-ok [s/Str] "[str,str]" ["str" "str"])
     (coerce-ok [s/Keyword] "[kw,kw]" [:kw :kw])
     (coerce-ok {s/Keyword s/Str} "kw: str" {:kw "str"})
+    (coerce-ok {:kw s/Int} "kw: 1" {:kw 1})
     (coerce-ok {s/Str s/Keyword} "str: kw" {"str" :kw})
     (coerce-ok {s/Keyword [{s/Keyword s/Keyword}]} "kw: [kw: kw]" {:kw [{:kw :kw}]}))
   (testing "Corner cases"
