@@ -68,7 +68,7 @@
   [schema data]
   (if (and (map? schema) (empty? schema))
     {}
-    (let [coercer-fn (sc/coercer! (s/maybe schema) config-coercion-matcher)]
+    (let [coercer-fn (sc/coercer! schema config-coercion-matcher)]
       (coercer-fn data))))
 
 (defn map-remap
