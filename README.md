@@ -6,6 +6,10 @@
 
 A Clojure library for config coercion.
 
+```clj
+[squeeze "0.3.1"]
+```
+
 ## Rationale
 
 [The Twelve-Factor App] recommends to only use environment variables to pass configuration to applications.
@@ -99,7 +103,7 @@ Using schema:
 ```
 Would yield:
 ```clj
-{:http-ip-whitelist ["1.1.1.1" "2.2.2.2" "3.3.3.3"]}
+{:http-ip-whitelist[squeeze "0.3.1"]}
 ```
 
 ### Helper functions
@@ -114,8 +118,8 @@ If you need to get rid of the name prefix, like `:http-`, use `remove-key-prefix
 In order to remap some keys in a map and only keep the remapped ones, use `remap-keys`:
 
 ```clj
-(squeeze/remap-keys {:whitelist :http-ip-whitelist} {:http-ip-whitelist ["1.1.1.1"] :http-port 8000})
-; => {:whitelist ["1.1.1.1"]}
+(squeeze/remap-keys {:whitelist :http-ip-whitelist} {:http-ip-whitelist[squeeze "0.3.1"] :http-port 8000})
+; => {:whitelist[squeeze "0.3.1"]}
 ```
 
 ## Dependencies
