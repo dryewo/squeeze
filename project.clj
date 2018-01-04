@@ -9,7 +9,7 @@
   :plugins [[lein-cloverage "1.0.9"]
             [lein-shell "0.5.0"]]
   :deploy-repositories [["releases" :clojars]]
-  :aliases {"update-readme-version" ["shell" "sed" "-i" "s/\\[squeeze \"[0-9.]*\"\\]/[squeeze \"${:version}\"]/" "README.md"]}
+  :aliases {"update-readme-version" ["shell" "sed" "-i" "s/\\\\[squeeze \"[0-9.]*\"\\\\]/[squeeze \"${:version}\"]/" "README.md"]}
   :release-tasks [["shell" "git" "diff" "--exit-code"]
                   ["change" "version" "leiningen.release/bump-version"]
                   ["change" "version" "leiningen.release/bump-version" "release"]
