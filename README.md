@@ -7,7 +7,7 @@
 A Clojure library for config coercion.
 
 ```clj
-[squeeze "0.3.1"]
+[squeeze "0.3.2"]
 ```
 
 ## Rationale
@@ -103,7 +103,7 @@ Using schema:
 ```
 Would yield:
 ```clj
-{:http-ip-whitelist[squeeze "0.3.1"]}
+{:http-ip-whitelist[squeeze "0.3.2"]}
 ```
 
 ### Helper functions
@@ -118,8 +118,8 @@ If you need to get rid of the name prefix, like `:http-`, use `remove-key-prefix
 In order to remap some keys in a map and only keep the remapped ones, use `remap-keys`:
 
 ```clj
-(squeeze/remap-keys {:whitelist :http-ip-whitelist} {:http-ip-whitelist[squeeze "0.3.1"] :http-port 8000})
-; => {:whitelist[squeeze "0.3.1"]}
+(squeeze/remap-keys {:whitelist :http-ip-whitelist} {:http-ip-whitelist[squeeze "0.3.2"] :http-port 8000})
+; => {:whitelist[squeeze "0.3.2"]}
 ```
 
 ## Dependencies
