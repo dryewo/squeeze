@@ -3,8 +3,8 @@
   :url "https://github.com/dryewo/squeeze"
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[prismatic/schema "1.1.9"]
-                 [circleci/clj-yaml "0.5.6"]]
+  :dependencies [[prismatic/schema "1.1.10"]
+                 [circleci/clj-yaml "0.6.0"]]
   :plugins [[lein-cloverage "1.0.13"]
             [lein-shell "0.5.0"]
             [lein-changelog "0.3.2"]
@@ -20,4 +20,4 @@
                   ["vcs" "tag"]
                   ["deploy"]
                   ["vcs" "push"]]
-  :profiles {:dev {:dependencies [[org.clojure/clojure "1.9.0"]]}})
+  :profiles {:dev {:dependencies [[org.clojure/clojure "1.10.0"]]}})
